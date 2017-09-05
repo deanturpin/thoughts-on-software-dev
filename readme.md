@@ -3,9 +3,10 @@ Rather than define another coding standard I think more value can be gained
 from separating good practices applicable to programming in general and largely
 subjective aesthetics qualities (like brace usage).
 
-
-# Immutability
-Declare immutable first.
+# Minimise mutable state
+A philosophy I hadn't considered until I started looking at functional
+programming. Minimise mutable state (use constants) and minimise unexpected
+side effects.
 
 ```js
 // JavaScript
@@ -13,7 +14,7 @@ const hello = 5
 ```
 
 ```haskell
--- Haskell is always immutable
+-- Everything is immutable in Haskell :O
 hello = 5
 ```
 
@@ -52,7 +53,7 @@ function hello() {
 ```
 
 # Simple syntax
-Use features of the language to simplify the code.
+Use features of the language to simplify the code (see "Scope" above).
 
 ```cpp
 // C++ - local namespace declaration to simplify scope
@@ -116,8 +117,8 @@ setInterval(function() {
 
 # clang-format
 In C++ you can simply run ```clang-format``` over your code and these
-distractions go away! Although I haven't quite worked out where it fits into my
-workflow but in the meantime I've just added it as a separate make rule.
+distractions go away. I haven't quite worked out where it fits into my workflow
+but in the meantime I've just added it as a separate make rule.
 
 # Limited by your imagination
 It's usually used as a motivational mantra but actually we are entirely limited
@@ -146,11 +147,6 @@ interrupts them (...) or just sending an email instead.
 # Pseudo code
 The use of ad-hoc, informal code is common in high-level documents but is prone
 to ambiguities. Why not use actual code?
-
-# Minimise mutable state
-A philosophy I hadn't considered until I started looking at functional
-programming. Minimise mutable state (use constants) and minimise unexpected
-side effects.
 
 # Embracing Wagile
 There are a whole generation of system engineers and managers who aren't letting
@@ -197,18 +193,18 @@ it quicker? Of course typing code doesn't flow quite as well as sentences but
 you still have to communicate your ideas.
 
 # Commit often
-Makes the merge easier.
+And make the merge smoother.
 
 # Calibration
 There's a curious use of the word calibration in my work. For me it means an
 improved performance from a default state. But on all systems I've worked on it
 has this definition:
 
-1. Calibrated: Has a fighting chance of behaving as expected.
-2. Uncalibrated: Does nothing
+1. Calibrated: has a fighting chance of behaving as expected.
+2. Uncalibrated: does nothing.
 
 # Prefer long and long long
 http://en.cppreference.com/w/cpp/language/types
 
 # Further reading
-- https://blog.codinghorror.com/code-smells/
+* https://blog.codinghorror.com/code-smells/
