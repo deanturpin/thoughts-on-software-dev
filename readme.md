@@ -1,5 +1,4 @@
-# Style
-Rather than define another coding standard I think more value can be gained
+Rather than define _another_ coding standard I think more value can be gained
 from separating good practices applicable to programming in general and largely
 subjective aesthetics qualities (like brace usage).
 
