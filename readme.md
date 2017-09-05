@@ -18,8 +18,7 @@ hello = 5
 ```
 
 ```cpp
-// C++
-// Ignoring the fact that you can cast away constness :(
+// C++ - ignoring the fact that you can cast away constness :(
 const int hello = 5;
 ```
 
@@ -63,13 +62,14 @@ using namespace std;
 
 if (debug)
   cout << "debug" << endl;
-  ```
+```
 
 # Brace usage
 It's fairly arbitrary where you put your braces: see
 [Wikipedia](https://en.wikipedia.org/wiki/Indent_style).
 
-At work I use Allman style.
+At work the standard states that all new code must use Allman style. But much
+of the codebase is written by people who make their own rules (research).
 
 ```cpp
 // C++
@@ -102,9 +102,13 @@ fi
 ```
 
 # Semicolons in JavaScript
-I started dropping semicolons in JavaScript but both Greasemonkey editors
-(Firefox and Chrome) complain a lot about this so I've returned to using them
-again.
+I started dropping semicolons in JavaScript but the default Greasemonkey
+editors in Firefox and Chrome complain a lot about this so I've returned to
+using them again.
+
+# Use the defaults
+I try to use the defaults wherever possible. Unless it's something I do so
+often that the added maintenance of straying from the path is justifiable.
 
 ```js
 // Periodically check reload checkbox state
