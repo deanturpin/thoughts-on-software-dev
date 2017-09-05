@@ -1,11 +1,10 @@
 # Style
-
 Rather than define another coding standard I think more value can be gained
 from separating good practices applicable to programming in general and largely
 subjective aesthetics qualities (like brace usage).
 
 
-## Immutability
+# Immutability
 Declare immutable first.
 
 ```js
@@ -29,7 +28,7 @@ const int hello = 5;
 readonly hello=5
 ```
 
-## Scope
+# Scope
 Scope as tightly as possible.
 
 ```cpp
@@ -52,7 +51,7 @@ function hello() {
 }
 ```
 
-## Simple syntax
+# Simple syntax
 Use features of the language to simplify the code.
 
 ```cpp
@@ -66,9 +65,7 @@ if (debug)
   cout << "debug" << endl;
   ```
 
-# Formatting
-
-## Brace usage
+# Brace usage
 It's fairly arbitrary where you put your braces: see
 [Wikipedia](https://en.wikipedia.org/wiki/Indent_style).
 
@@ -104,9 +101,11 @@ if true; then
 fi
 ```
 
-## Semicolons in JavaScript
-I started experimenting with no semicolons but both Greasemonkey editors
-I've used complain a lot about this so I've returned to using them again.
+# Semicolons in JavaScript
+I started dropping semicolons in JavaScript but both Greasemonkey editors
+(Firefox and Chrome) complain a lot about this so I've returned to using them
+again.
+
 ```js
 // Periodically check reload checkbox state
 setInterval(function() {
@@ -116,24 +115,27 @@ setInterval(function() {
 ```
 
 # clang-format
-In lieu of a formal coding standard I've actually recently started using
-```clang-format``` for my own projects. Although I haven't quite worked out
-where it fits into my workflow but in the meantime I've just added it as a make
-rule.
+In C++ you can simply run ```clang-format``` over your code and these
+distractions go away! Although I haven't quite worked out where it fits into my
+workflow but in the meantime I've just added it as a separate make rule.
 
 # Limited by your imagination
-It's usually used as a motivational mantra but actually we are. Quite often
-Eureka moments are completely accidental, it's only by putting yourself/mind in
-a playful environment that we're open to these revelations.
+It's usually used as a motivational mantra but actually we are entirely limited
+by our imagination. Eureka moments are often completely accidental but by
+putting yourself in the right environment/mindset I think you can improve you
+chances of coming across one.
 
 # Use software as the end user
 How can you include the things you write into your daily routine? It's really
-difficult. Perhaps you could just use a small part of something. Perhaps
-overlay the results of the API read you're working on into your commute website
-with Greasemonkey?
+difficult. Perhaps you could just use a small part of something? Overlay the
+results of the API read you're working on into your commute website with
+Greasemonkey?
 
 # Hungarian notation
-* https://en.wikipedia.org/wiki/Hungarian_notation
+Decorating a variable/class/constant with letters to indicate its underlying
+type: it is a little harder to maintain but mostly I think it looks clumsy.
+
+https://en.wikipedia.org/wiki/Hungarian_notation
 
 # Interruptions
 Interruptions can really mess with your flow. It's easy to interrupt the person
@@ -145,18 +147,14 @@ interrupts them (...) or just sending an email instead.
 The use of ad-hoc, informal code is common in high-level documents but is prone
 to ambiguities. Why not use actual code?
 
-# Communication with non-technical people
-
 # Minimise mutable state
 A philosophy I hadn't considered until I started looking at functional
-programming. Minimise side effects.
-
+programming. Minimise mutable state (use constants) and minimise unexpected
+side effects.
 
 # Embracing Wagile
 There are a whole generation of system engineers and managers who aren't letting
-waterfall go any time soon.
-
-How can we embrace wagile?
+waterfall go any time soon. So how can we embrace wagile?
 
 Often managers interpret Agile as impulsive or responsive but the important
 thing for me is dropping the things that seemed like a good idea but don't work
@@ -167,49 +165,47 @@ We should be open to new solutions all the time.
 http://ronjeffries.com/articles/016-03/you-want/
 
 # Code editors
-Often use vim for configuring embedded systems (sometimes the only way) but for
-larger code bases where there are a lot of files to keep in your head it's
-better to use an IDE.
-
-# Lint
-Recently move to using clang-format and the LLVM VIM config. I've used a make
-rule to format all source files but it would be nice if this were more
-integrated into the workflow.
+I use vim for configuring embedded systems (sometimes the only way) and small
+code projects but for larger code bases where there are a lot of files to keep
+in your head it's better to use an IDE.
 
 # Compiler optimisation
 I normally prefer to defer enabling compiler optimisation until the code is
 mature. Only then should you enable the speed ups. (In my day job we prefer to
-only enable compiler optimisation because it's cheaper.)
+only enable compiler optimisation because it's cheaper.) Is it acceptable if
+your code is only quick enough when the optimiser is cranked?
 
 # Compiler warnings
--Wall -Wpedantic -pedantic-errors
-
-# clang
--Weverything
-
-# 2D graphics
-Initially I was unsure about adding 2D graphics to the language but I've come around to it.
-
-# Touch typing
-Often not taken seriously - espectially with older engineers -
-
-# Compilers
-I prefer the warnings offered by ```clang``` but it's useful to swap to
+Turn warnings up and read them. I prefer the warnings offered by ```clang``` but it's useful to swap to
 ```gcc``` and see what it has to offer.
 
+```bash
+# g++
+-Wall -Wpedantic -pedantic-errors
+
+# clang++
+-Weverything
+```
+
+# 2D graphics
+Initially I was unsure about adding 2D graphics to the language but I've come
+around to it.
+
+# Touch typing
+Often not taken seriously but if you type all day why wouldn't you want to do
+it quicker? Of course typing code doesn't flow quite as well as sentences but
+you still have to communicate your ideas.
+
 # Commit often
-Make the merge easier
+Makes the merge easier.
 
-You've gotta ask if your code only being useful with the optimiser cranked is acceptable. 
+# Calibration
+There's a curious use of the word calibration in my work. For me it means an
+improved performance from a default state. But on all systems I've worked on it
+has this definition:
 
-# Calibration 
-There's a curious use of the word calibration. 
-
-On all systems I've worked on:
-Calibrated: Has a fighting chance of behaving as expected. 
-Uncalibrated: Does nothing
-
-Using templates 
+1. Calibrated: Has a fighting chance of behaving as expected.
+2. Uncalibrated: Does nothing
 
 # Prefer long and long long
 http://en.cppreference.com/w/cpp/language/types
