@@ -121,7 +121,9 @@ setInterval(function() {
 # clang-format
 In C++ you can simply run ```clang-format``` over your code and these
 distractions go away. I haven't quite worked out where it fits into my workflow
-but in the meantime I've just added it as a separate make rule.
+but in the meantime I've just added it as a separate make rule. I do find I
+sometimes change the code to make clang produce a better format, but is that
+such a bad thing in terms of consistency?
 
 # Limited by your imagination
 It's usually used as a motivational mantra but actually we are entirely limited
@@ -146,6 +148,10 @@ Interruptions can really mess with your flow. It's easy to interrupt the person
 next to you but it's no good for them. I'm conscious of not stopping somebody
 when they're deep in the middle of something, waiting until somebody else
 interrupts them (...) or just sending an email instead.
+
+# new and delete
+Don't use new. Even if you remember to call delete you will definitely refactor
+it away and kick yourself later. Uses scoped pointers. RAII.
 
 # Pseudo code
 The use of ad-hoc, informal code is common in high-level documents but is prone
@@ -175,8 +181,8 @@ only enable compiler optimisation because it's cheaper.) Is it acceptable if
 your code is only quick enough when the optimiser is cranked?
 
 # Compiler warnings
-Turn warnings up and read them. I prefer the warnings offered by ```clang``` but it's useful to swap to
-```gcc``` and see what it has to offer.
+Turn warnings up and read them. I prefer the warnings offered by ```clang```
+but it's useful to swap to ```gcc``` and see what it has to offer.
 
 ```bash
 # g++
